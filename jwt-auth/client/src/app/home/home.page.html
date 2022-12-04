@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input autocomplete="off" type="email" formControlName="email">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input autocomplete="off" type="Password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button [disabled]="!authForm.valid || auth.isLoading.getValue()" type="submit">login</ion-button>
+        </ion-item>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>
